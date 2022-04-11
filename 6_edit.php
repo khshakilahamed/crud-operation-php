@@ -1,4 +1,10 @@
 <?php 
+
+    session_start();
+    if(!isset($_SESSION['login'])){
+        header("Location: 8_login.php");
+    }
+
     $id = $_GET['id'];
 
     $conn = mysqli_connect('localhost', 'root', '', 'sms');
@@ -32,7 +38,12 @@
                 <a href="./1_index.php" class="btn btn-info">Student List</a>
             </div>
             <div class="col-md-9">
-                <h2>Edit Student</h2>
+                <div class="d-flex justify-content-between">
+                    <h2>Edit Student</h2>
+                    <a  href="10_logout.php">
+                        <button class="btn btn-warning">Logout</button>
+                    </a>
+                </div>
                 <hr>
 
                 <form action="./7_update.php?id=<?php echo $id ?>" method="POST">

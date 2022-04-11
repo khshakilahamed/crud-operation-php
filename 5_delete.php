@@ -1,4 +1,10 @@
 <?php 
+
+    session_start();
+    if(!isset($_SESSION['login'])){
+        header("Location: 8_login.php");
+    }
+    
     $id = $_GET['id'];
 
     $conn = mysqli_connect('localhost', 'root', '', 'sms');

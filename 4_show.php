@@ -1,4 +1,10 @@
 <?php 
+
+    session_start();
+    if(!isset($_SESSION['login'])){
+        header("Location: 8_login.php");
+    }
+
     $id = $_GET['id'];
 
     $conn = mysqli_connect('localhost', 'root', '', 'sms');
@@ -34,7 +40,12 @@
                 <a href="./1_index.php" class="btn btn-info">Students</a>
             </div>
             <div class="col-md-9">
-                <h2>Student Information</h2>
+                <div class="d-flex justify-content-between">
+                    <h2>Student Information</h2>
+                    <a href="10_logout.php">
+                        <button class="btn btn-warning">Logout</button>
+                    </a>
+                </div>
                 <hr>
                 <table class="table">
                     <tr>

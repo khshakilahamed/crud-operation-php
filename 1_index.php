@@ -1,5 +1,8 @@
 <?php 
     session_start();
+    if(!isset($_SESSION['login'])){
+        header("Location: 8_login.php");
+    }
     $conn = mysqli_connect('localhost', 'root', '', 'sms');
     $sql = "SELECT * FROM student";
     $result = mysqli_query($conn, $sql);
@@ -32,8 +35,12 @@
                         Added successfully
                     </div>
                 <?php } ?>
-
-                <h2>Student list</h2>
+                <div class="d-flex justify-content-between">
+                    <h2>Student list</h2>
+                    <a href="10_logout.php">
+                        <button class="btn btn-warning">Logout</button>
+                    </a>
+                </div>
                 <hr>
                 <table class="table">
                     <thead>
