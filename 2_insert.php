@@ -51,19 +51,19 @@
                 <form action="./3_store.php" method="POST">
                     <div class="mb-3">
                         <label for="name" class="form-label">Name</label>
-                        <input type="text" name="name" id="name" class="form-control" placeholder="Student Name" require>
+                        <input type="text" name="name" id="name" class="form-control" placeholder="Student Name" required>
                     </div>
                     <div class="mb-3">
                         <label for="class" class="form-label">Class</label>
-                        <input type="text" name="class_id" id="class" class="form-control" placeholder="Student Class" require>
+                        <input type="text" name="class_id" id="class" class="form-control" placeholder="Student Class" required>
                     </div>
                     <div class="mb-3">
                         <label for="age" class="form-label">Age</label>
-                        <input type="text" name="age" id="age" class="form-control" placeholder="Student Age" require>
+                        <input type="text" name="age" id="age" class="form-control" placeholder="Student Age" required>
                     </div>
                     <div class="mb-3">
                         <label for="phone" class="form-label">Phone</label>
-                        <input type="text" name="phone" id="phone" class="form-control" placeholder="Student Phone" require>
+                        <input type="text" name="phone" id="phone" class="form-control" placeholder="Student Phone" required>
                     </div>
                     <div class="mb-3">
                         <label for="address" class="form-label">Address</label>

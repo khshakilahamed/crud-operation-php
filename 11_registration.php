@@ -21,33 +21,41 @@
         <div class="row">
             <div class="col-md-6 col-md-offset-3" >
 
-                <?php if(isset($_SESSION['error'])) { ?>
-                    <div class="alert alert-primary" role="alert">
-                        Wrong Email and Password
-                    </div>
-                <?php } ?>
-
-                <?php if(isset($_SESSION['reg_msg'])) { ?>
+                <?php if(isset($_SESSION['error_msg'])) { ?>
                     <div class="alert alert-warning" role="alert">
-                        <?php echo $_SESSION['reg_msg'];?>
+                        <?php echo $_SESSION['error_msg'];?>
                     </div>
                 <?php } ?>
 
-                <h2>Login</h2>
+                
+
+                <h2>Create an Account</h2>
                 <hr>
 
-                <form action="./9_confirmLogin.php" method="POST" >
+                <form action="./12_confirmRegistration.php" method="POST" >
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" name="name" id="name" class="form-control" placeholder="Name" required>
+                    </div>
+
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
                         <input type="email" name="email" id="email" class="form-control" placeholder="Email" required>
                     </div>
+
                     <div class="mb-3">
                         <label for="password" class="form-label">Password</label>
                         <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
                     </div>
-                    <a href="./11_registration.php" style="text-decoration:none"><p>Create an Account</p></a>
 
-                    <button type="submit" class="btn btn-primary">Log in</button>
+                    <div class="mb-3">
+                        <label for="confirm-password" class="form-label">Confirm Password</label>
+                        <input type="password" name="confirm-password" id="confirm-password" class="form-control" placeholder="Re-password" required>
+                    </div>
+
+                    <a href="./8_login.php" style="text-decoration:none"><p>Already Have?</p></a>
+
+                    <button type="submit" class="btn btn-primary">Sign up</button>
                 </form>
 
             </div>
@@ -59,6 +67,6 @@
 
 
 <?php 
-    unset($_SESSION['error']);
-    unset($_SESSION['reg_msg']);
+    unset($_SESSION['error_msg']);
+    
 ?>
