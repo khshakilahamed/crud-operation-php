@@ -9,5 +9,10 @@
 
     $sql = "INSERT INTO student VALUES(null, '$name', '$class_id', $age, '$phone', '$address');";
 
-    mysqli_query($conn, $sql);
+    if(mysqli_query($conn, $sql)){
+        header(("Location: 1_index.php"));
+    }
+    else{
+        echo "Not inserted";
+    }
 ?>
