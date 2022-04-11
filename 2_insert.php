@@ -1,4 +1,5 @@
 <?php 
+session_start();
     $conn = mysqli_connect('localhost', 'root', '', 'sms');
     $sql = "SELECT * FROM student";
     $result = mysqli_query($conn, $sql);
@@ -28,6 +29,13 @@
                 <a href="./1_index.php" class="btn btn-info">Student List</a>
             </div>
             <div class="col-md-9">
+
+                <?php if(isset($_SESSION['error'])) { ?>
+                    <div class="alert alert-warning" role="alert">
+                        something wrong
+                    </div>
+                <?php } ?>
+
                 <h2>Add New Student</h2>
                 <hr>
 
@@ -63,3 +71,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   </body>
 </html>
+
+
+<?php 
+    unset($_SESSION['error']);
+?>
