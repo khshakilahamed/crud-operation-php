@@ -45,8 +45,8 @@
                                 <td><?php echo $row['age'] ?></td>
                                 <td>
                                     <a href="4_show.php?id=<?php echo $row['id']; ?>" class="btn btn-info">View</a>
-                                    <a href="#" class="btn btn-warning">Edit</a>
-                                    <a href="#" class="btn btn-danger">Delete</a>
+                                    <a href="6_edit.php?id=<?php echo $row['id']; ?>" class="btn btn-warning">Edit</a>
+                                    <a onclick="return confirm('Are you sure?')" href="5_delete.php?id=<?php echo $row['id']; ?>" class="btn btn-danger">Delete</a>
                                 </td>
                             </tr>
                         <?php   

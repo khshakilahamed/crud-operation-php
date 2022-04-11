@@ -1,8 +1,12 @@
 <?php 
+    $id = $_GET['id'];
+
     $conn = mysqli_connect('localhost', 'root', '', 'sms');
-    $sql = "SELECT * FROM student";
+    $sql = "SELECT * FROM student WHERE id = $id";
+
     $result = mysqli_query($conn, $sql);
 
+    $std = mysqli_fetch_assoc($result);
 
 
 ?>
@@ -28,29 +32,29 @@
                 <a href="./1_index.php" class="btn btn-info">Student List</a>
             </div>
             <div class="col-md-9">
-                <h2>Add New Student</h2>
+                <h2>Edit Student</h2>
                 <hr>
 
-                <form action="./3_store.php" method="POST">
+                <form action="./7_update.php?id=<?php echo $id ?>" method="POST">
                     <div class="mb-3">
                         <label for="name" class="form-label">Name</label>
-                        <input type="text" name="name" id="name" class="form-control" placeholder="Student Name" require>
+                        <input type="text" name="name" id="name" class="form-control" value="<?php echo $std['name']?>" placeholder="Student Name" require>
                     </div>
                     <div class="mb-3">
                         <label for="class" class="form-label">Class</label>
-                        <input type="text" name="class_id" id="class" class="form-control" placeholder="Student Class" require>
+                        <input type="text" name="class_id" id="class" class="form-control" value="<?php echo $std['class_id']?>" placeholder="Student Class" require>
                     </div>
                     <div class="mb-3">
                         <label for="age" class="form-label">Age</label>
-                        <input type="text" name="age" id="age" class="form-control" placeholder="Student Age" require>
+                        <input type="text" name="age" id="age" class="form-control" value="<?php echo $std['age']?>" placeholder="Student Age" require>
                     </div>
                     <div class="mb-3">
                         <label for="phone" class="form-label">Phone</label>
-                        <input type="text" name="phone" id="phone" class="form-control" placeholder="Student Phone" require>
+                        <input type="text" name="phone" id="phone" class="form-control" value="<?php echo $std['phone']?>" placeholder="Student Phone" require>
                     </div>
                     <div class="mb-3">
                         <label for="address" class="form-label">Address</label>
-                        <input type="text" name="address" id="address" class="form-control" placeholder="Student Address" >
+                        <input type="text" name="address" id="address" class="form-control" value="<?php echo $std['address']?>" placeholder="Student Address" >
                     </div>
 
 
