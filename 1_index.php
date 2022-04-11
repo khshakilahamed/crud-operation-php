@@ -3,6 +3,7 @@
     if(!isset($_SESSION['login'])){
         header("Location: 8_login.php");
     }
+    
     $conn = mysqli_connect('localhost', 'root', '', 'sms');
     $sql = "SELECT * FROM student";
     $result = mysqli_query($conn, $sql);
@@ -66,8 +67,7 @@
                             </tr>
                         <?php   
                         }
-                        ?>
-                        
+                        ?>                       
                     </tbody>
                 </table>
             </div>

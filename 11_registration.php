@@ -27,6 +27,12 @@
                     </div>
                 <?php } ?>
 
+                <?php if(isset($_SESSION['reg_error_msg'])) { ?>
+                    <div class="alert alert-warning" role="alert">
+                        <?php echo $_SESSION['reg_error_msg'];?>
+                    </div>
+                <?php } ?>
+
                 
 
                 <h2>Create an Account</h2>
@@ -68,5 +74,5 @@
 
 <?php 
     unset($_SESSION['error_msg']);
-    
+    unset($_SESSION['reg_error_msg']);
 ?>
